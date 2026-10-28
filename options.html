@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chrome Tab Title - Saved Rules</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Saved tab-title rules</h1>
+        <p>Edit an exact URL and insert <code>*</code> anywhere to turn it into a wildcard URL pattern.</p>
+      </div>
+      <button id="add" type="button">Add rule</button>
+    </header>
+
+    <div class="hint">
+      Example: <code>https://example.com/projects/*/details?view=*</code><br>
+      <code>*</code> matches any sequence of characters, including <code>/</code>, <code>?</code>, and <code>#</code>.
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>URL / pattern</th>
+            <th>Custom title</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="rules"></tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <button id="save" type="button" class="primary">Save changes</button>
+    </div>
+  </main>
+
+  <template id="row-template">
+    <tr>
+      <td>
+        <select class="type" aria-label="Rule type">
+          <option value="url">URL</option>
+          <option value="site">Site</option>
+        </select>
+      </td>
+      <td><input class="match" type="text" autocomplete="off" spellcheck="false" aria-label="URL or pattern"></td>
+      <td><input class="title" type="text" maxlength="300" autocomplete="off" aria-label="Custom title"></td>
+      <td><button class="delete" type="button" title="Delete rule">Delete</button></td>
+    </tr>
+  </template>
+
+  <script src="rules.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

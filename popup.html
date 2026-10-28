@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chrome Tab Title</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <h1>Chrome Tab Title</h1>
+
+    <div id="page" class="page" title=""></div>
+
+    <label for="scope">Apply to</label>
+    <select id="scope">
+      <option value="page">This exact page</option>
+      <option value="site">This entire site</option>
+    </select>
+
+    <label for="title">Custom title</label>
+    <input id="title" type="text" maxlength="300" autocomplete="off" placeholder="Enter tab title">
+
+    <div class="buttons">
+      <button id="save" type="button" class="primary">Save</button>
+      <button id="remove" type="button">Remove</button>
+    </div>
+
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+
+    <button id="manage" type="button" class="manage">Manage saved rules</button>
+  </main>
+
+  <script src="rules.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
